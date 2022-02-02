@@ -25,7 +25,6 @@ const routes: Routes = [
     loadChildren: () => import('../app/404/not-found.module').then(m => m.NotFoundModule),
   }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]

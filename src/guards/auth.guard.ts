@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
     private getAuthStateChanged(): boolean {
         const auth = getAuth();
         let isUserLogged = false;
-        onAuthStateChanged(auth, async (user) => {
+        onAuthStateChanged(auth, async (user: any) => {
             if (user) {
                 const uid = user.uid;
                 if (!uid) {

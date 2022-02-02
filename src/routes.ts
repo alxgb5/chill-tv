@@ -3,7 +3,7 @@ export const RoutesList = {
     Login: 'login',
     Register: 'register',
     Home: 'home',
-    Dashboard: 'dasboard',
+    Dashboard: 'dashboard',
     NotFound: 'not-found',
 
     // ADMINISTRATION ROUTES
