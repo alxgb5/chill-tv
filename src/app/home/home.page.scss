@@ -2,7 +2,7 @@ home-page {
     .container {
         padding: 5%;
         position: relative;
-        max-height: 100vh;
+        max-height: 70vh;
     }
     .main-title {
         width: 20%;
@@ -77,5 +77,61 @@ home-page {
         background-repeat: no-repeat;
         background-size: contain;
         transition: all 0.2s;
+    }
+
+    .right-pannel {
+        z-index: 10;
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        width: 100px;
+        height: 80vh;
+        background-color: rgba(241, 241, 241, 0.31);
+        border-radius: 50px 0 0 50px;
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding-top: 40px;
+            .item {
+                width: 70px;
+                height: 70px;
+                border-radius: 100px;
+                background-color: transparent;
+                background-size: contain;
+            }
+            .netflix {
+                background-image: url("/assets/img/netflix.png");
+            }
+            .crunchy {
+                background-image: url("/assets/img/crunchyroll.png");
+            }
+            .wakanim {
+                background-image: url("/assets/img/wakanim.png");
+            }
+            .adn {
+                background-image: url("/assets/img/adn.png");
+            }
+            .disney {
+                background-image: url("/assets/img/disney.png");
+            }
+        }
+    }
+
+    @media screen and (min-width: 1600px) and (max-width: 2000px) {
+        .image-background {
+            right: 30%;
+        }
+        .discover {
+            margin-top: 15vh;
+            .inline-preview {
+                .banner {
+                    height: 250px;
+                    width: 400px;
+                }
+            }
+        }
     }
 }
