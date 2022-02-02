@@ -6,7 +6,12 @@ import { RoutesList } from '../routes';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: RoutesList.Dashboard,
+    redirectTo: RoutesList.Home,
+    pathMatch: 'full',
+  },
+  {
+    path: RoutesList.Home,
+    loadChildren: () => import('../app/home/home.module').then(m => m.HomeModule),
     pathMatch: 'full',
   },
   {

@@ -14,6 +14,7 @@ import { provideMessaging, getMessaging } from '@angular/fire/messaging';
 import { providePerformance, getPerformance } from '@angular/fire/performance';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AuthGuard } from '../guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [
-    ScreenTrackingService, UserTrackingService
+    ScreenTrackingService, UserTrackingService, AuthGuard
   ],
   bootstrap: [AppComponent]
 })
