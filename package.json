@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "open:http": "open-cli http://localhost:8081",
-    "start:http": "npm run build && npm run open:http && http-server -p 8081 -c-1 dist/chilltv"
+    "start:http": "npm run build && npm run open:http && http-server -p 8081 -c-1 dist/chilltv",
+    "deploy": "npm run build:prod && ng deploy"
   },
   "private": true,
   "dependencies": {
