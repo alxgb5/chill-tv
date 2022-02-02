@@ -25,7 +25,6 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@angular/service-worker": "~12.2.0",
-    "firebase": "^9.6.5",
     "http-server": "^14.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
