@@ -1,3 +1,81 @@
 home-page {
-    //
+    .container {
+        padding: 5%;
+        position: relative;
+        max-height: 100vh;
+    }
+    .main-title {
+        width: 20%;
+        h1 {
+            font-size: 2.5rem;
+        }
+        .button {
+            text-align: right;
+        }
+        button.translucid-btn {
+            background-color: rgba(241, 241, 241, 0.226);
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: none;
+            color: #ffffff;
+            font-size: 1.3rem;
+        }
+    }
+
+    .discover {
+        position: relative;
+        z-index: 7;
+        margin-top: 10vh;
+        width: 70%;
+        .inline-preview {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            .banner-group {
+                p {
+                    text-align: center;
+                    font-size: 1.2rem;
+                }
+            }
+            .banner {
+                height: 200px;
+                width: 350px;
+                background-color: aliceblue;
+                border-radius: 20px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: all 0.2s;
+            }
+            .breaking-bad {
+                background-image: url("https://www.themoviedb.org/t/p/original/wKHImjeHwVIiWJWFIJtWUKkA5QJ.jpg");
+            }
+            .spider-man {
+                background-image: url("https://www.themoviedb.org/t/p/original/7snXgpmWghs6IDmpOCgZkW0X73A.jpg");
+            }
+            .naruto {
+                background-image: url("https://www.themoviedb.org/t/p/original/c2yoZd3tOKofFgY6WvlH30AXGYM.jpg");
+            }
+
+            .banner:hover {
+                height: 220px;
+                width: 370px;
+                border: 2px solid #ffffff;
+            }
+        }
+    }
+    .image-background {
+        position: absolute;
+        z-index: 1;
+        top: 40px;
+        right: 15%;
+        height: 70vh;
+        width: 700px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: all 0.2s;
+    }
 }

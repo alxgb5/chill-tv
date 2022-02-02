@@ -1,1 +1,41 @@
-<h1>Bienvenue sur CHILL TV 👋</h1>
+<div class="container">
+    <div class="image-background" [style.background-image]="'url('+this.backgroundBanner+')'">
+    </div>
+    <div class="main-title">
+        <h1>Bienvenue sur <br> CHILL TV 👋</h1>
+        <div class="button">
+            <button class="translucid-btn">Ouvrir l'app</button>
+        </div>
+    </div>
+    <div class="discover">
+        <h2>Découvrez quoi regarder ce soir 🍿</h2>
+        <div class="inline-preview">
+            <div class="banner-group" (mouseenter)="setBanner(1)">
+                <div class="banner breaking-bad"></div>
+                <p>Breaking Bad</p>
+            </div>
+            <div class="banner-group">
+                <div class="banner spider-man" (mouseenter)="setBanner(2)"></div>
+                <p>Spider-man Homecoming</p>
+            </div>
+            <div class="banner-group">
+                <div class="banner naruto" (mouseenter)="setBanner(3)"></div>
+                <p>Naruto Shippuden</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-pannel">
+        <div class="column">
+            <div class="netflix">
+            </div>
+            <div class="crunchy">
+            </div>
+            <div class="wakanim">
+            </div>
+            <div class="adn">
+            </div>
+            <div class="disney">
+            </div>
+        </div>
+    </div>
+</div>
