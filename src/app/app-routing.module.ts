@@ -8,6 +8,11 @@ const routes: Routes = [
     path: '',
     redirectTo: RoutesList.Dashboard,
     pathMatch: 'full',
+  },
+  {
+    path: RoutesList.Dashboard,
+    loadChildren: () => import('../app/dashboard/dashboard.module').then(m => m.DashboardModule),
+    pathMatch: 'full',
     canActivate: [AuthGuard],
   },
   {
