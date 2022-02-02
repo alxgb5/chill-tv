@@ -5,8 +5,11 @@
     "ng": "ng",
     "start": "ng serve --port 8010 -o",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "open:http": "open-cli http://localhost:8081",
+    "start:http": "npm run build && npm run open:http && http-server -p 8081 -c-1 dist/chilltv"
   },
   "private": true,
   "dependencies": {
@@ -15,15 +18,20 @@
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
+    "@angular/fire": "^7.2.0",
     "@angular/forms": "~12.2.0",
     "@angular/material": "^12.2.13",
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@angular/service-worker": "~12.2.0",
+    "firebase": "^9.6.5",
+    "http-server": "^14.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "wait-on": "^6.0.0",
+    "zone.js": "~0.11.4",
+    "rxfire": "^6.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.12",
@@ -37,6 +45,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "open-cli": "^7.0.1",
     "typescript": "~4.3.5"
   }
 }

@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "chilltv"
+  },
+  "targets": {
+    "chilltv": {
+      "hosting": {
+        "chilltv": [
+          "chilltv"
+        ]
+      }
+    }
   }
 }
