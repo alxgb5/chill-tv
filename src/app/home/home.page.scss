@@ -21,6 +21,9 @@ home-page {
             color: #ffffff;
             font-size: 1.3rem;
         }
+        button.translucid-btn:hover {
+            background-color: rgba(216, 216, 216, 0.226);
+        }
     }
 
     .discover {
@@ -49,6 +52,20 @@ home-page {
                 background-position: center;
                 background-repeat: no-repeat;
                 transition: all 0.2s;
+                position: relative;
+                .notation {
+                    position: absolute;
+                    width: 70px;
+                    height: 30px;
+                    background-color: #ffffff;
+                    color: #433459;
+                    bottom: 0;
+                    right: 0;
+                    border-radius: 10px 0 10px 0;
+                    padding: 5px;
+                    text-align: right;
+                    font-size: 1.1rem;
+                }
             }
             .breaking-bad {
                 background-image: url("https://www.themoviedb.org/t/p/original/wKHImjeHwVIiWJWFIJtWUKkA5QJ.jpg");
@@ -59,11 +76,17 @@ home-page {
             .naruto {
                 background-image: url("https://www.themoviedb.org/t/p/original/c2yoZd3tOKofFgY6WvlH30AXGYM.jpg");
             }
-
-            .banner:hover {
-                height: 220px;
-                width: 370px;
-                border: 2px solid #ffffff;
+            @media (min-width: 900px) {
+                .banner:hover {
+                    height: 220px;
+                    width: 370px;
+                    border: 2px solid #ffffff;
+                    .notation {
+                        width: 70px;
+                        height: 30px;
+                        border-radius: 10px 0 15px 0;
+                    }
+                }
             }
         }
     }
@@ -94,7 +117,7 @@ home-page {
             align-items: center;
             justify-content: center;
             gap: 30px;
-            padding-top: 40px;
+            height: 100%;
             .item {
                 width: 70px;
                 height: 70px;
@@ -119,6 +142,9 @@ home-page {
             }
         }
     }
+    .only-mobile {
+        display: none;
+    }
 
     @media screen and (min-width: 1600px) and (max-width: 2000px) {
         .image-background {
@@ -130,6 +156,70 @@ home-page {
                 .banner {
                     height: 250px;
                     width: 400px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 200px) and (max-width: 500px) {
+        .right-pannel {
+            display: none;
+        }
+
+        .main-title {
+            width: 100%;
+            h1 {
+                font-size: 3rem;
+                text-align: center;
+            }
+            .button {
+                display: none;
+            }
+        }
+        .image-background {
+            display: none;
+        }
+
+        .discover {
+            width: 100%;
+            h2 {
+                font-size: 1.3rem;
+            }
+            .inline-preview {
+                overflow: auto;
+                gap: 10px;
+                align-items: baseline;
+                .banner {
+                    height: 180px;
+                    width: 300px;
+                }
+            }
+        }
+        .only-mobile {
+            display: block;
+            .col-btn {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                button {
+                    height: 50px;
+                    width: 230px;
+                    border-radius: 20px;
+                    border: 1px solid #8115ee;
+                    color: #ffffff;
+                    background-color: transparent;
+                }
+                button.flat-button {
+                    background-color: #8115ee;
+                    border: 1px solid #8115ee;
+                }
+                button.flat-button:hover {
+                    background-color: #6a12c2;
+                }
+                button.border-button:hover {
+                    background-color: #332c3a;
                 }
             }
         }
