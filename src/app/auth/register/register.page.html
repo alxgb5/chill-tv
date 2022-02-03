@@ -1,29 +1,53 @@
 <div class="container">
     <h1>Inscription</h1>
     <div class="stepper-container">
+        <div class="stepper-menu">
+            <button class="rounded-btn" [class]="activeStepper === 1 ? 'active' : ''" (click)="switchStep(1)">1</button>
+            <button class="rounded-btn" [class]="activeStepper === 2 ? 'active' : ''" (click)="switchStep(2)">2</button>
+            <button class="rounded-btn" [class]="activeStepper === 3 ? 'active' : ''" (click)="switchStep(3)">3</button>
+        </div>
         <div class="stepper">
-            <mat-stepper orientation="horizontal">
-                <mat-step>
-                    <ng-template matStepLabel>Informations utilisateur</ng-template>
-                    <ng-template matStepContent>
-                        <p>This content was rendered lazily</p>
-                        <button mat-button matStepperNext>Next</button>
-                    </ng-template>
-                </mat-step>
-                <mat-step>
-                    <ng-template matStepLabel>Vos plateformes</ng-template>
-                    <ng-template matStepContent>
-                        <p>This content was also rendered lazily</p>
-                        <button mat-button matStepperPrevious>Back</button>
-                        <button mat-button matStepperNext>Next</button>
-                    </ng-template>
-                </mat-step>
-                <mat-step>
-                    <ng-template matStepLabel>Vos préférences</ng-template>
-                    <p>This content was rendered eagerly</p>
-                    <button mat-button matStepperPrevious>Back</button>
-                </mat-step>
-            </mat-stepper>
+            <ng-container *ngIf="activeStepper === 1">
+                <span>Email</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <span>Mot de passe</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <span>Confirmer votre mot de passe</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirmer votre mot de passe</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <span>Pseudo</span>
+                <mat-form-field appearance="outline">
+                    <mat-label>Pseudo</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </ng-container>
+            <ng-container *ngIf="activeStepper === 2">
+                <p>Sélectionnez les plateformes que vous utilisez :</p>
+                <div class="platforms">
+                    <div class="item prime"></div>
+                    <div class="item netflix"></div>
+                    <div class="item disney"></div>
+                    <div class="item ocs"></div>
+                    <div class="item canal"></div>
+                    <div class="item crunchy"></div>
+                    <div class="item wakanim"></div>
+                    <div class="item adn"></div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="activeStepper === 3">
+                3
+            </ng-container>
+            <div class="next-button" *ngIf="activeStepper !== 3">
+                <button class="rounded-btn" (click)="nextStep()">></button>
+            </div>
         </div>
     </div>
 </div>

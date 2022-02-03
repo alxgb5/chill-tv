@@ -1,5 +1,4 @@
 register-page {
-    //
     .container {
         text-align: center;
         h1 {
@@ -7,11 +6,84 @@ register-page {
         }
         .stepper-container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            .stepper-menu {
+                display: flex;
+                justify-content: space-between;
+                gap: 50px;
+                margin-bottom: 2vh;
+            }
             .stepper {
-                width: 50%;
-                .mat-stepper-horizontal {
-                    background-color: unset;
+                border: 2px solid #8115ee;
+                height: 70vh;
+                width: 30%;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                text-align: left;
+                position: relative;
+            }
+
+            .next-button {
+                position: absolute;
+                bottom: 20px;
+                margin: auto;
+                left: 45%;
+            }
+
+            .platforms {
+                margin-top: 5vh;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 30px;
+                justify-content: center;
+                .item {
+                    background-color: transparent;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 100px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    filter: grayscale(100%);
+                    transition: all 0.1s;
+                    border: transparent 2px solid;
+                }
+                .item:hover {
+                    border: #8115ee 2px solid;
+                    filter: none;
+                }
+                .item.selected {
+                    filter: none;
+                    border: #8115ee 2px solid;
+                }
+                .item.netflix {
+                    background-image: url("/assets/img/netflix.png");
+                }
+                .item.crunchy {
+                    background-image: url("/assets/img/crunchyroll.png");
+                }
+                .item.disney {
+                    background-image: url("/assets/img/disney.png");
+                }
+                .item.adn {
+                    background-image: url("/assets/img/adn.png");
+                }
+                .item.wakanim {
+                    background-image: url("/assets/img/wakanim.png");
+                }
+                .item.prime {
+                    background-image: url("/assets/img/prime.png");
+                }
+                .item.ocs {
+                    background-image: url("/assets/img/ocs.png");
+                }
+                .item.canal {
+                    background-image: url("/assets/img/canal.png");
                 }
             }
         }
