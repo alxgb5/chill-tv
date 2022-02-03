@@ -11,22 +11,22 @@
                 <span>Email</span>
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input matInput>
+                    <input type="email" [(ngModel)]="user.email" matInput required>
                 </mat-form-field>
                 <span>Mot de passe</span>
                 <mat-form-field appearance="outline">
                     <mat-label>Mot de passe</mat-label>
-                    <input matInput>
+                    <input type="password" [(ngModel)]="user.password" matInput required>
                 </mat-form-field>
                 <span>Confirmer votre mot de passe</span>
                 <mat-form-field appearance="outline">
                     <mat-label>Confirmer votre mot de passe</mat-label>
-                    <input matInput>
+                    <input type="password" [(ngModel)]="confirmPassword" matInput required>
                 </mat-form-field>
                 <span>Pseudo</span>
                 <mat-form-field appearance="outline">
                     <mat-label>Pseudo</mat-label>
-                    <input matInput>
+                    <input type="text" [(ngModel)]="user.username" matInput required>
                 </mat-form-field>
             </ng-container>
             <ng-container *ngIf="activeStepper === 2">
@@ -42,23 +42,23 @@
                 <p>Renseignez les genres qui vous correspondent :</p>
                 <div>
                     <mat-chip-list aria-label="Categories">
-                        <mat-basic-chip>Action</mat-basic-chip>
-                        <mat-basic-chip>Anime</mat-basic-chip>
-                        <mat-basic-chip>Horreur</mat-basic-chip>
-                        <mat-basic-chip>Fantastique</mat-basic-chip>
-                        <mat-basic-chip>Science-fiction</mat-basic-chip>
-                        <mat-basic-chip>Humour</mat-basic-chip>
-                        <mat-basic-chip>Comédie</mat-basic-chip>
-                        <mat-basic-chip>Magie</mat-basic-chip>
-                        <mat-basic-chip>Aventure</mat-basic-chip>
-                        <mat-basic-chip>Futuriste</mat-basic-chip>
-                        <mat-basic-chip>Espace</mat-basic-chip>
-                        <mat-basic-chip>Drame</mat-basic-chip>
+                        <mat-basic-chip *ngFor="let item of selectedGenres" [class]="item.selected ? 'selected' : ''"
+                            (click)="selectGenre(item)">
+                            {{item.genre.name}}</mat-basic-chip>
                     </mat-chip-list>
                 </div>
             </ng-container>
             <div class="next-button" *ngIf="activeStepper !== 3">
-                <button class="rounded-btn" (click)="nextStep()">></button>
+                <button class="rounded-btn" (click)="nextStep()">
+                    <mat-icon>
+                        <span class="material-icons-round">
+                            arrow_forward_ios
+                        </span>
+                    </mat-icon>
+                </button>
+            </div>
+            <div class="finish-register" *ngIf="activeStepper === 3">
+                <button mat-flat-button (click)="register()">Terminer mon inscription</button>
             </div>
         </div>
     </div>

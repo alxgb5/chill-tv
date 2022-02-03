@@ -12,6 +12,7 @@ register-page {
             .stepper-menu {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 gap: 50px;
                 margin-bottom: 2vh;
             }
@@ -101,6 +102,22 @@ register-page {
             }
             mat-basic-chip.selected {
                 background-color: #8115ee;
+            }
+        }
+        .next-button .rounded-btn {
+            margin-top: 20px;
+            height: 70px;
+            width: 70px;
+            background-color: rgba(241, 241, 241, 0.31);
+        }
+        .finish-register {
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            .mat-flat-button {
+                background-color: #8115ee;
+                color: #ffffff;
             }
         }
     }
