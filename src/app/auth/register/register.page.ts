@@ -1,6 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { getAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { BaseComponent } from '../../../base/base.component';
 import { DialogService } from '../../../base/dialog.service';
+import { UsersService } from '../../../base/users.service';
 import { GenresDto } from '../../../models/genres-dto';
 import { PlatformDto } from '../../../models/platform-dto';
 import { UserDto } from '../../../models/user-dto';
@@ -27,6 +30,8 @@ export class RegisterPage extends BaseComponent {
     confirmPassword: string = '';
     constructor(
         private dialog: DialogService,
+        private afAuth: AngularFireAuth,
+        private userService: UsersService,
     ) {
         super();
         this.initData();
@@ -55,9 +60,9 @@ export class RegisterPage extends BaseComponent {
         wrapper.selected = !wrapper.selected;
     }
 
-    register() {
+    async register() {
         if (!this.user.email || !this.user.password || !this.confirmPassword || !this.user.username) {
-            // this.dialog.showDialog({ text: "Vous devez compléter toutes les informations requises", header: 'de', cancelLabel: "Confirmer", okLabel: 'ok' });
+            this.dialog.showDialog({ text: "Vous devez compléter toutes les informations requises", header: 'de', cancelLabel: "Confirmer", okLabel: 'ok' });
             return;
         }
         const platformsSelected = this.selectedPlateform.filter(x => x.selected === true);
@@ -70,6 +75,19 @@ export class RegisterPage extends BaseComponent {
             //  dialog need to fill in
             return;
         }
+        if (this.user.email && this.user.password) {
+            await this.afAuth.createUserWithEmailAndPassword(this.user.email, this.user.password);
+            await this.afAuth.signInWithEmailAndPassword(this.user.email, this.user.password);
+            const auth = await getAuth();
+            if (auth.currentUser)
+                this.user.uid = auth.currentUser.uid;
+            this.user.password = undefined;
+            this.user.genres = this.selectedGenres.filter(x => x.selected === true).map(x => x.genre);
+            this.user.platforms = this.selectedPlateform.filter(x => x.selected === true).map(x => x.platform);
+            await this.userService.create(this.user);
+        }
+
+
     }
 
     initData() {

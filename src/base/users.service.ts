@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/compat/firestore';
-import { collection, query, where, getDocs } from 'firebase/firestore';
-import { Firestore, setDoc, doc, getDoc } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { collection, getDocs } from 'firebase/firestore';
+import { Firestore, doc, getDoc, setDoc } from '@angular/fire/firestore';
 import { getAuth } from '@angular/fire/auth';
 import { UserDto } from '../models/user-dto';
 @Injectable({
