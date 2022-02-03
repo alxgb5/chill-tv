@@ -86,6 +86,22 @@ register-page {
                     background-image: url("/assets/img/canal.png");
                 }
             }
+
+            mat-basic-chip {
+                min-width: 120px;
+                height: 40px;
+                font-size: 1rem;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(241, 241, 241, 0.31);
+                border-radius: 10px;
+                margin: 10px;
+            }
+            mat-basic-chip.selected {
+                background-color: #8115ee;
+            }
         }
     }
 }
