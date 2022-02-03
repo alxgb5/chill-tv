@@ -162,6 +162,9 @@ home-page {
     }
 
     @media screen and (min-width: 200px) and (max-width: 500px) {
+        .container {
+            height: 100vh;
+        }
         .right-pannel {
             display: none;
         }
@@ -183,7 +186,7 @@ home-page {
         .discover {
             width: 100%;
             h2 {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
             .inline-preview {
                 overflow: auto;
