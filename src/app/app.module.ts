@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DialogService } from '../base/dialog.service';
 
 export const CommonModulesList = [
   CommonModule,
@@ -62,9 +63,10 @@ export const CommonModulesList = [
     provideStorage(() => getStorage()),
     AngularFireModule.initializeApp(environment.firebase),
     ...CommonModulesList,
+    MatDialogModule,
   ],
   providers: [
-    ScreenTrackingService, UserTrackingService, AuthGuard
+    ScreenTrackingService, UserTrackingService, AuthGuard, DialogService,
   ],
   bootstrap: [AppComponent]
 })
