@@ -12,3 +12,21 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.rounded-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #272e3c;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+.rounded-btn.active {
+    background-color: #8115ee;
+}
+.rounded-btn:hover {
+    background-color: #8115ee;
+}

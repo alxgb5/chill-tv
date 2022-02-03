@@ -15,6 +15,29 @@ import { providePerformance, getPerformance } from '@angular/fire/performance';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AuthGuard } from '../guards/auth.guard';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+export const CommonModulesList = [
+  CommonModule,
+  MatIconModule,
+  MatSelectModule,
+  FormsModule,
+  MatInputModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatProgressSpinnerModule,
+  MatDialogModule,
+  MatSnackBarModule,
+];
 
 @NgModule({
   declarations: [
@@ -38,6 +61,7 @@ import { AuthGuard } from '../guards/auth.guard';
     providePerformance(() => getPerformance()),
     provideStorage(() => getStorage()),
     AngularFireModule.initializeApp(environment.firebase),
+    ...CommonModulesList,
   ],
   providers: [
     ScreenTrackingService, UserTrackingService, AuthGuard
