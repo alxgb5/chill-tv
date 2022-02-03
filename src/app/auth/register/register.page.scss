@@ -1,0 +1,19 @@
+register-page {
+    //
+    .container {
+        text-align: center;
+        h1 {
+            text-align: center;
+        }
+        .stepper-container {
+            display: flex;
+            justify-content: center;
+            .stepper {
+                width: 50%;
+                .mat-stepper-horizontal {
+                    background-color: unset;
+                }
+            }
+        }
+    }
+}

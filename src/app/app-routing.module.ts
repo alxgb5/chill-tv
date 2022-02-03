@@ -21,6 +21,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: RoutesList.Register,
+    loadChildren: () => import('../app/auth/register/register.module').then(m => m.RegisterModule),
+    pathMatch: 'full',
+  },
+  {
     path: RoutesList.NotFound,
     loadChildren: () => import('../app/404/not-found.module').then(m => m.NotFoundModule),
     pathMatch: 'full',

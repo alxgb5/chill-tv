@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Inscription</h1>
+    <div class="stepper-container">
+        <div class="stepper">
+            <mat-stepper orientation="horizontal">
+                <mat-step>
+                    <ng-template matStepLabel>Informations utilisateur</ng-template>
+                    <ng-template matStepContent>
+                        <p>This content was rendered lazily</p>
+                        <button mat-button matStepperNext>Next</button>
+                    </ng-template>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Vos plateformes</ng-template>
+                    <ng-template matStepContent>
+                        <p>This content was also rendered lazily</p>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                    </ng-template>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Vos préférences</ng-template>
+                    <p>This content was rendered eagerly</p>
+                    <button mat-button matStepperPrevious>Back</button>
+                </mat-step>
+            </mat-stepper>
+        </div>
+    </div>
+</div>
