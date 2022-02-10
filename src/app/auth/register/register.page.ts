@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { getAuth } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import { BaseComponent } from '../../../base/base.component';
 import { DialogService } from '../../../base/dialog.service';
 import { UsersService } from '../../../base/users.service';
@@ -32,6 +33,7 @@ export class RegisterPage extends BaseComponent {
         private dialog: DialogService,
         private afAuth: AngularFireAuth,
         private userService: UsersService,
+        private router: Router,
     ) {
         super();
         this.initData();
@@ -81,10 +83,12 @@ export class RegisterPage extends BaseComponent {
             const auth = await getAuth();
             if (auth.currentUser)
                 this.user.uid = auth.currentUser.uid;
-            this.user.password = undefined;
+            this.user.password = null;
             this.user.genres = this.selectedGenres.filter(x => x.selected === true).map(x => x.genre);
             this.user.platforms = this.selectedPlateform.filter(x => x.selected === true).map(x => x.platform);
-            await this.userService.create(this.user);
+            const response = await this.userService.create(this.user);
+            if (response.success)
+                this.router.navigateByUrl(this.RoutesList.Dashboard);
         }
 
 

@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
+import { CommonModulesList } from '../app.module';
 import { DashboardPage } from './dashboard.page';
 
 const route: Routes = [{
@@ -10,10 +10,10 @@ const route: Routes = [{
 
 @NgModule({
     imports: [
-        CommonModule,
+        ...CommonModulesList,
         RouterModule.forChild(route),
     ],
     declarations: [DashboardPage],
-    exports: [Router],
+    exports: [RouterModule],
 })
 export class DashboardModule { }

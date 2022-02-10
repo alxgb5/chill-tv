@@ -4,6 +4,12 @@ import { collection, getDocs } from 'firebase/firestore';
 import { Firestore, doc, getDoc, setDoc } from '@angular/fire/firestore';
 import { getAuth } from '@angular/fire/auth';
 import { UserDto } from '../models/user-dto';
+
+class BaseResponse {
+    success: boolean = false;
+    data: any;
+}
+
 @Injectable({
     providedIn: 'root',
 })
@@ -47,8 +53,15 @@ export class UsersService {
         return currentUser;
     }
 
-    async create(userDto: UserDto): Promise<void> {
-        return await setDoc(doc(this.firestore, 'users', userDto.uid), Object.assign({}, userDto));
+    async create(userDto: UserDto): Promise<BaseResponse> {
+        const response = new BaseResponse();
+        try {
+            const detDocResponse = await setDoc(doc(this.firestore, 'users', userDto.uid), Object.assign({}, userDto));
+            console.log("🚀 ~ UsersService ~ create ~ detDocResponse", detDocResponse);
+            response.success = true;
+        } catch (err) {
+        }
+        return response;
     }
 
     async delete(id: string): Promise<void> {
